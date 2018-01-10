@@ -1,6 +1,27 @@
 /*Fonts*/
 /*Colors*/
-body {
-  background-color: #f67534; }
+/*Spacing*/
+.p-bg {
+  padding: 20rem 0; }
+
+header {
+  height: 100vh;
+  background-image: url("../img/karin2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top; }
+  header .navbar {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%); }
+    header .navbar .navbar-toggler-icon {
+      background-color: #f67534;
+      border-radius: 100%; }
+    header .navbar .nav-link {
+      color: #fff;
+      font-family: "Give You Glory", cursive;
+      font-size: 20px; }
 
 /*# sourceMappingURL=style.css.map */
