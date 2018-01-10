@@ -3,7 +3,48 @@ $headings-ff: 'Give You Glory', cursive;
 
 /*Colors*/
 $primary: #f67534;
+$white: #fff;
+
+/*Spacing*/
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3),
+  6: ($spacer * 6)
+);
+
+.p-bg {
+	padding: 20rem 0;
+}
 
 body {
-	background-color: $primary;
 }
+
+header {
+	height: 100vh;
+	background-image: url("../img/karin2.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center top;
+	.navbar {
+		position: absolute;
+		top: 50%;
+		left: 15%;
+		-webkit-transform: translateY(-50%);
+		        transform: translateY(-50%);
+        .navbar-toggler-icon {
+        	background-color: $primary;
+        	border-radius: 100%;
+        }
+        .nav-link {
+        	color: $white;
+        	font-family: $headings-ff;
+        	font-size: 20px;
+        }
+	}
+}
+
