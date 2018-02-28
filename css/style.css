@@ -1,27 +1,67 @@
 /*Fonts*/
 /*Colors*/
 /*Spacing*/
-.p-bg {
-  padding: 20rem 0; }
+/* .p-bg {*/
+/*   padding: 20rem 0;*/
+/* }*/
+/*Mixins*/
+body {
+  font-family: "Merriweather Sans", sans-serif; }
+
+img {
+  max-width: 100%; }
 
 header {
   height: 100vh;
-  background-image: url("../img/karin2.jpg");
+  background-image: url("../img/schuhe_karin.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top; }
   header .navbar {
+    border: 10px solid transparent;
+    -o-border-image: url("../img/dotround-border.svg") 33% round;
+    border-image: url("../img/dotround-border.svg") 33% round;
+    border-image-outset: 3px;
     position: absolute;
-    top: 50%;
-    left: 15%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%); }
+    top: 6%;
+    left: 3%;
+    -webkit-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+    background-color: #fff; }
     header .navbar .navbar-toggler-icon {
       background-color: #f67534;
       border-radius: 100%; }
     header .navbar .nav-link {
-      color: #fff;
+      color: #222;
       font-family: "Give You Glory", cursive;
       font-size: 20px; }
+
+main.container {
+  width: 90%; }
+
+.col-spacer {
+  height: 70px; }
+
+figure {
+  position: relative;
+  margin: 0;
+  border: 10px solid transparent;
+  -o-border-image: url("../img/dotround-border-orange.svg") 33% round;
+  border-image: url("../img/dotround-border-orange.svg") 33% round;
+  border-image-outset: 3px;
+  padding: 1em; }
+  figure figcaption {
+    position: absolute;
+    padding: 13px 30px 7px;
+    font-family: "Give You Glory", cursive;
+    left: -10px;
+    color: #fff;
+    background: #f67534;
+    line-height: 0;
+    bottom: 50px;
+    -webkit-transform: rotate(-5deg);
+    transform: rotate(-5deg); }
+    figure figcaption h2 {
+      margin: 0; }
 
 /*# sourceMappingURL=style.css.map */

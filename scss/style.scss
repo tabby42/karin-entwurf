@@ -5,6 +5,7 @@ $text-ff: 'Merriweather Sans', sans-serif;
 /*Colors*/
 $primary: #f67534;
 $white: #fff;
+$black: #222;
 
 /*Spacing*/
 $spacer: 1rem;
@@ -18,34 +19,88 @@ $spacers: (
   6: ($spacer * 6)
 );
 
-.p-bg {
-	padding: 20rem 0;
+/* .p-bg {*/
+/*   padding: 20rem 0;*/
+/* }*/
+
+/*Mixins*/
+@mixin boxed-heading () {
+    position: absolute;
+    padding: 13px 30px 7px;
+    font-family: $headings-ff;
+    left: -10px;
+    color: #fff;
+    background: #f67534;
+    line-height: 0;
+    bottom: 50px;
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+    h2 {
+      margin: 0;
+    }
+}
+
+@mixin dotted-border ($color) {
+    border: 10px solid transparent;
+    @if $color == 'black' {
+        -o-border-image:url("../img/dotround-border.svg") 33% round;
+       border-image:url("../img/dotround-border.svg") 33% round;
+     } @else {
+      -o-border-image:url("../img/dotround-border-orange.svg") 33% round;
+       border-image:url("../img/dotround-border-orange.svg") 33% round;
+     }
+    border-image-outset: 3px;
 }
 
 body {
+  font-family: $text-ff;
+}
+
+img {
+  max-width: 100%;
 }
 
 header {
-	height: 100vh;
-	background-image: url("../img/karin2.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center top;
-	.navbar {
-		position: absolute;
-		top: 50%;
-		left: 15%;
-		-webkit-transform: translateY(-50%);
-		        transform: translateY(-50%);
+  height: 100vh;
+  background-image: url("../img/schuhe_karin.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  .navbar {
+    @include dotted-border('black');
+    position: absolute;
+    top: 6%;
+    left: 3%;
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+    background-color: $white;
         .navbar-toggler-icon {
-        	background-color: $primary;
-        	border-radius: 100%;
+          background-color: $primary;
+          border-radius: 100%;
         }
         .nav-link {
-        	color: $white;
-        	font-family: $headings-ff;
-        	font-size: 20px;
+          color: $black;
+          font-family: $headings-ff;
+          font-size: 20px;
         }
-	}
+  }
+}
+
+main.container {
+  width: 90%;
+}
+
+.col-spacer {
+  height: 70px;
+}
+
+figure {
+  position: relative;
+    margin: 0;
+    @include dotted-border('orange');
+    padding: 1em;
+    figcaption {
+      @include boxed-heading();
+    }
 }
 
