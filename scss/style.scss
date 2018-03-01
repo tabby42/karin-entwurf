@@ -43,11 +43,13 @@ $transition-default: all 0.6s ease;
     h2 {
       margin: 0;
     }
-    &:hover, &:focus {
-      border: 2px dotted $black;
-      color: $primary;
-      background-color: $white;
+    &:hover, &:focus, &:active {
+      background-color: $primary !important;
+      border-color: $primary !important;
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
     }
+    @include shadow();
 }
 
 @mixin dotted-border ($color) {
@@ -55,6 +57,9 @@ $transition-default: all 0.6s ease;
     @if $color == 'black' {
         -o-border-image:url("../img/dotround-border.svg") 33% round;
        border-image:url("../img/dotround-border.svg") 33% round;
+     } @else  if $color == 'white' {
+       -o-border-image:url("../img/dotround-border-white.svg") 33% round;
+          border-image:url("../img/dotround-border-white.svg") 33% round;
      } @else {
       -o-border-image:url("../img/dotround-border-orange.svg") 33% round;
        border-image:url("../img/dotround-border-orange.svg") 33% round;
@@ -62,13 +67,48 @@ $transition-default: all 0.6s ease;
     /* border-image-outset: 3px;*/
 }
 
+@mixin shadow() {
+  -webkit-box-shadow:         3px 2px 19px 0px rgba(50, 50, 50, 0.83);
+          box-shadow:         3px 2px 19px 0px rgba(50, 50, 50, 0.83);
+}
+
 body {
   font-family: $text-ff;
+  font-weight: 300;
   overflow-x: hidden;
 }
 
 img {
   width: 100%;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: $headings-ff;
+}
+
+.btn.btn-primary {
+  @include boxed-heading();
+  border-radius: 0;
+  padding: 28px 35px 20px;
+  font-size: 24px;
+}
+
+.btn.btn-default {
+  font-family: $headings-ff;
+  color: $white;
+  background-color: transparent;
+  border-radius: 0;
+  padding: 8px 30px 3px;
+  font-size: 20px;
+  @include dotted-border('white');
+  border-width: 5px;
+  -webkit-transition: $transition-default;
+  transition: $transition-default;
+  &:hover, &:focus, &:active {
+    color: $primary;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
 }
 
 header {
@@ -77,20 +117,37 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  background-attachment: fixed;
   position: relative;
   h1 {
+    @include shadow();
     position: absolute;
     font-family: $headings-ff;
-    color: $white;
+    line-height: 1.2;
+    color: $black;
+    background-color: $white;
     text-align: center;
     width: 60%;
-    bottom: -70px;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    bottom: -90px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    padding: 32px 20px 25px;
+    &:before {
+      content: '';
+      position: absolute;
+      height: calc(100% - 12px);
+      width: calc(100% - 12px);
+      left: 6px;
+      top: 6px;
+      z-index: -1;
+      @include dotted-border('orange');
+    }
   }
 }
 
 .navbar {
+  @include shadow();  
   position: absolute;
   z-index: 100;
   top: 40px;
@@ -177,7 +234,15 @@ header {
   }
 
 main.container {
-  /*width: 90%;*/
+  
+  padding-top: 10em;
+  padding-bottom: 10em; 
+  /* @include media-breakpoint-up(xl) { */
+  /*   width: 80%;*/
+  /* }*/
+  @media (min-width: 1200px) {
+    width: 80%;
+  }
 }
 
 .col-spacer {
@@ -188,9 +253,89 @@ figure {
   position: relative;
     margin: 0;
     @include dotted-border('orange');
-    padding: .3em;
+    padding: 3px;
     figcaption {
       @include boxed-heading();
     }
+}
+
+footer {
+  background-color: $black;
+  color: $white;
+  padding: 2em 2.5em;
+  text-align: right;
+  position: relative;
+  img {
+    max-width: 175px;
+    padding-bottom: 10px;
+    @include dotted-border('white');
+    border-width: 5px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    margin-bottom: 8px;
+  }
+  p {
+    font-size: 12px;
+    line-height: 1.7;
+    padding: 5px 0;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  h4 {
+    color: $primary;
+  }
+  h6 {
+    font-weight: 400;
+    margin-bottom: 5px;
+  }
+  .newsletter-container {
+    @include shadow();
+    position: absolute;
+    font-family: $headings-ff;
+    background-color: $white;
+    text-align: left;
+    width: 40%;
+    top: -75px;
+    left: 10%;
+    padding: 35px 35px 25px;
+    z-index: 10;
+    h3 {
+      color: $primary;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      height: calc(100% - 12px);
+      width: calc(100% - 12px);
+      left: 6px;
+      top: 6px;
+      z-index: 0;
+      @include dotted-border('orange');
+    }
+    .btn.btn-primary {
+      right: -60px;
+      bottom: -68px;
+      left: auto;
+    }
+    form {
+      position: relative;
+    }
+  }
+}
+
+.form-control {
+  border-radius: 0;
+  border: 0;
+  border-bottom: 2px dotted $black;
+  outline: 0;
+  font-family: $text-ff;
+  font-size: 12px;
+  &:focus {
+    outline: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border-color: $primary;
+  }
 }
 

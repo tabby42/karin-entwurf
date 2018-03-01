@@ -7,10 +7,60 @@
 /*Mixins*/
 body {
   font-family: "Merriweather Sans", sans-serif;
+  font-weight: 300;
   overflow-x: hidden; }
 
 img {
   width: 100%; }
+
+h1, h2, h3, h4, h5 {
+  font-family: "Give You Glory", cursive; }
+
+.btn.btn-primary {
+  position: absolute;
+  padding: 13px 30px 7px;
+  font-family: "Give You Glory", cursive;
+  left: -20px;
+  color: #fff;
+  background: #f67534;
+  line-height: 0;
+  border: 2px dotted #f67534;
+  bottom: 50px;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+  -webkit-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+  -webkit-box-shadow: 3px 2px 19px 0px rgba(50, 50, 50, 0.83);
+  box-shadow: 3px 2px 19px 0px rgba(50, 50, 50, 0.83);
+  border-radius: 0;
+  padding: 28px 35px 20px;
+  font-size: 24px; }
+  .btn.btn-primary h2 {
+    margin: 0; }
+  .btn.btn-primary:hover, .btn.btn-primary:focus, .btn.btn-primary:active {
+    background-color: #f67534 !important;
+    border-color: #f67534 !important;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+
+.btn.btn-default {
+  font-family: "Give You Glory", cursive;
+  color: #fff;
+  background-color: transparent;
+  border-radius: 0;
+  padding: 8px 30px 3px;
+  font-size: 20px;
+  border: 6px solid transparent;
+  -o-border-image: url("../img/dotround-border-white.svg") 33% round;
+  border-image: url("../img/dotround-border-white.svg") 33% round;
+  /* border-image-outset: 3px;*/
+  border-width: 5px;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease; }
+  .btn.btn-default:hover, .btn.btn-default:focus, .btn.btn-default:active {
+    color: #f67534;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
 
 header {
   height: 100vh;
@@ -18,18 +68,39 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  background-attachment: fixed;
   position: relative; }
   header h1 {
+    -webkit-box-shadow: 3px 2px 19px 0px rgba(50, 50, 50, 0.83);
+    box-shadow: 3px 2px 19px 0px rgba(50, 50, 50, 0.83);
     position: absolute;
     font-family: "Give You Glory", cursive;
-    color: #fff;
+    line-height: 1.2;
+    color: #222;
+    background-color: #fff;
     text-align: center;
     width: 60%;
-    bottom: -70px;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%); }
+    bottom: -90px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    padding: 32px 20px 25px; }
+    header h1:before {
+      content: '';
+      position: absolute;
+      height: calc(100% - 12px);
+      width: calc(100% - 12px);
+      left: 6px;
+      top: 6px;
+      z-index: -1;
+      border: 6px solid transparent;
+      -o-border-image: url("../img/dotround-border-orange.svg") 33% round;
+      border-image: url("../img/dotround-border-orange.svg") 33% round;
+      /* border-image-outset: 3px;*/ }
 
 .navbar {
+  -webkit-box-shadow: 3px 2px 19px 0px rgba(50, 50, 50, 0.83);
+  box-shadow: 3px 2px 19px 0px rgba(50, 50, 50, 0.83);
   position: absolute;
   z-index: 100;
   top: 40px;
@@ -103,7 +174,14 @@ header {
           background-color: #fff; }
 
 main.container {
-  /*width: 90%;*/ }
+  padding-top: 10em;
+  padding-bottom: 10em;
+  /* @include media-breakpoint-up(xl) { */
+  /*   width: 80%;*/
+  /* }*/ }
+  @media (min-width: 1200px) {
+    main.container {
+      width: 80%; } }
 
 .col-spacer {
   height: 70px; }
@@ -115,7 +193,7 @@ figure {
   -o-border-image: url("../img/dotround-border-orange.svg") 33% round;
   border-image: url("../img/dotround-border-orange.svg") 33% round;
   /* border-image-outset: 3px;*/
-  padding: .3em; }
+  padding: 3px; }
   figure figcaption {
     position: absolute;
     padding: 13px 30px 7px;
@@ -129,12 +207,90 @@ figure {
     -webkit-transition: all 0.6s ease;
     transition: all 0.6s ease;
     -webkit-transform: rotate(-5deg);
-    transform: rotate(-5deg); }
+    transform: rotate(-5deg);
+    -webkit-box-shadow: 3px 2px 19px 0px rgba(50, 50, 50, 0.83);
+    box-shadow: 3px 2px 19px 0px rgba(50, 50, 50, 0.83); }
     figure figcaption h2 {
       margin: 0; }
-    figure figcaption:hover, figure figcaption:focus {
-      border: 2px dotted #222;
-      color: #f67534;
-      background-color: #fff; }
+    figure figcaption:hover, figure figcaption:focus, figure figcaption:active {
+      background-color: #f67534 !important;
+      border-color: #f67534 !important;
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg); }
+
+footer {
+  background-color: #222;
+  color: #fff;
+  padding: 2em 2.5em;
+  text-align: right;
+  position: relative; }
+  footer img {
+    max-width: 175px;
+    padding-bottom: 10px;
+    border: 6px solid transparent;
+    -o-border-image: url("../img/dotround-border-white.svg") 33% round;
+    border-image: url("../img/dotround-border-white.svg") 33% round;
+    /* border-image-outset: 3px;*/
+    border-width: 5px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    margin-bottom: 8px; }
+  footer p {
+    font-size: 12px;
+    line-height: 1.7;
+    padding: 5px 0;
+    display: inline-block;
+    margin-bottom: 10px; }
+  footer h4 {
+    color: #f67534; }
+  footer h6 {
+    font-weight: 400;
+    margin-bottom: 5px; }
+  footer .newsletter-container {
+    -webkit-box-shadow: 3px 2px 19px 0px rgba(50, 50, 50, 0.83);
+    box-shadow: 3px 2px 19px 0px rgba(50, 50, 50, 0.83);
+    position: absolute;
+    font-family: "Give You Glory", cursive;
+    background-color: #fff;
+    text-align: left;
+    width: 40%;
+    top: -75px;
+    left: 10%;
+    padding: 35px 35px 25px;
+    z-index: 10; }
+    footer .newsletter-container h3 {
+      color: #f67534; }
+    footer .newsletter-container:before {
+      content: '';
+      position: absolute;
+      height: calc(100% - 12px);
+      width: calc(100% - 12px);
+      left: 6px;
+      top: 6px;
+      z-index: 0;
+      border: 6px solid transparent;
+      -o-border-image: url("../img/dotround-border-orange.svg") 33% round;
+      border-image: url("../img/dotround-border-orange.svg") 33% round;
+      /* border-image-outset: 3px;*/ }
+    footer .newsletter-container .btn.btn-primary {
+      right: -60px;
+      bottom: -68px;
+      left: auto; }
+    footer .newsletter-container form {
+      position: relative; }
+
+.form-control {
+  border-radius: 0;
+  border: 0;
+  border-bottom: 2px dotted #222;
+  outline: 0;
+  font-family: "Merriweather Sans", sans-serif;
+  font-size: 12px; }
+  .form-control:focus {
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-color: #f67534; }
 
 /*# sourceMappingURL=style.css.map */
