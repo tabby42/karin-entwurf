@@ -63,7 +63,7 @@ h1, h2, h3, h4, h5 {
     box-shadow: none; }
 
 header {
-  height: 100vh;
+  height: 92vh;
   background-image: url("../img/schuhe_karin.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -79,7 +79,7 @@ header {
     color: #222;
     background-color: #fff;
     text-align: center;
-    width: 60%;
+    width: 50%;
     bottom: -90px;
     left: 50%;
     -webkit-transform: translateX(-50%);
@@ -179,7 +179,7 @@ main.container {
   /* @include media-breakpoint-up(xl) { */
   /*   width: 80%;*/
   /* }*/ }
-  @media (min-width: 1200px) {
+  @media (min-width: 992px) {
     main.container {
       width: 80%; } }
 
@@ -223,7 +223,11 @@ footer {
   color: #fff;
   padding: 2em 2.5em;
   text-align: right;
-  position: relative; }
+  position: relative;
+  /* @include dotted-border('orange');*/
+  /* border-left: 0;*/
+  /* border-bottom: 0;*/
+  /* border-right: 0;*/ }
   footer img {
     max-width: 175px;
     padding-bottom: 10px;
@@ -240,10 +244,7 @@ footer {
     font-size: 12px;
     line-height: 1.7;
     padding: 5px 0;
-    display: inline-block;
     margin-bottom: 10px; }
-  footer h4 {
-    color: #f67534; }
   footer h6 {
     font-weight: 400;
     margin-bottom: 5px; }
@@ -292,5 +293,25 @@ footer {
     -webkit-box-shadow: none;
     box-shadow: none;
     border-color: #f67534; }
+
+.slider-row {
+  padding-top: 5em;
+  padding-bottom: 10em;
+  /* margin-bottom: 10em;*/
+  background-color: #f67534; }
+
+.swiper-container {
+  height: 400px;
+  width: 100%;
+  /* >.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {*/
+  /*   bottom: -35px;*/
+  /* }*/ }
+  .swiper-container img {
+    height: 400px;
+    width: auto;
+    border: 12px solid #fff; }
+  .swiper-container .swiper-slide {
+    -ms-flex-negative: 1;
+    flex-shrink: 1; }
 
 /*# sourceMappingURL=style.css.map */
