@@ -1,11 +1,16 @@
 /*Fonts*/
 $headings-ff: 'Give You Glory', cursive;
 $text-ff: 'Merriweather Sans', sans-serif;
+$base-fontsize: 14px;
 
 /*Colors*/
 $primary: #ef6b28;
 $white: #fff;
 $black: #222;
+
+.main-color {
+  color: $primary;
+}
 
 /*Spacing*/
 $spacer: 1rem;
@@ -100,6 +105,8 @@ body {
   font-family: $text-ff;
   font-weight: 300;
   overflow-x: hidden;
+  font-size: $base-fontsize;
+  line-height: 1.6;
 }
 
 img {
@@ -108,6 +115,11 @@ img {
 
 h1, h2, h3, h4, h5 {
   font-family: $headings-ff;
+
+}
+
+h1 {
+  font-size: 2.4em;
 }
 
 .btn.btn-primary {
@@ -149,8 +161,8 @@ header {
   h1 {
     position: absolute;
     width: 60%;
-    top: 328px;
-    left: 22%;
+    top: 115px;
+    left: 30%;
     z-index: 100;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
@@ -159,6 +171,7 @@ header {
       position: absolute;
       display: inline-block;
       font-family: $headings-ff;
+      font-size: 1.75rem;
       line-height: 1.2;
       color: $black;
       background-color: $white;
@@ -301,7 +314,7 @@ header {
   }
 
 main.container {
-  padding-top: 7em;
+  padding-top: 5em;
   padding-bottom: 8em; 
   /* @include media-breakpoint-up(xl) { */
   /*   width: 80%;*/
@@ -309,6 +322,10 @@ main.container {
   @media (min-width: 992px) {
     width: 80%;
   }
+}
+
+.subpage main.container {
+  margin-top: 7em;
 }
 
 .col-spacer {
