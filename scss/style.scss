@@ -140,37 +140,83 @@ h1, h2, h3, h4, h5 {
 
 header {
   height: 100vh;
-  background-image: url("../img/schuhe_karin.jpg");
+  background-image: url("../img/header_gross.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
+  background-position: center right;
+  /* background-attachment: fixed;*/
   position: relative;
   h1 {
-    @include shadow();
     position: absolute;
-    font-family: $headings-ff;
-    line-height: 1.2;
-    color: $black;
-    background-color: $white;
-    text-align: center;
-    width: 50%;
-    bottom: -90px;
-    left: 50%;
+    width: 60%;
+    top: 328px;
+    left: 22%;
+    z-index: 100;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
-    padding: 32px 20px 25px;
-    &:before {
-      content: '';
+     span{
+      @include shadow();
       position: absolute;
-      height: calc(100% - 12px);
-      width: calc(100% - 12px);
-      left: 6px;
-      top: 6px;
-      z-index: -1;
-      @include dotted-border('orange');
+      display: inline-block;
+      font-family: $headings-ff;
+      line-height: 1.2;
+      color: $black;
+      background-color: $white;
+      text-align: center;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%);
+      padding: 32px 40px 25px;
+      &:before {
+        content: '';
+        position: absolute;
+        height: calc(100% - 12px);
+        width: calc(100% - 12px);
+        left: 6px;
+        top: 6px;
+        z-index: -1;
+        @include dotted-border('orange');
+      }
+      &.slogan-1 {
+          -webkit-transform: rotate(2deg);
+                  transform: rotate(2deg);
+          left: 40%;
+          margin-top: 7px;
+      }
+      &.slogan-2 {
+        margin-top: 89px;
+        left: 30%;
+        -webkit-transform: rotate(-3deg);
+                transform: rotate(-3deg);
+      }
+      &.slogan-3 {
+        margin-top: 163px;
+        left: 42%;
+        -webkit-transform: rotate(-5deg);
+                transform: rotate(-5deg);
+      }
+      &.slogan-4 {
+        margin-top: 246px;
+        left: 30%;
+        -webkit-transform: rotate(-9deg);
+                transform: rotate(-9deg);
+      }
+      &.slogan-5 {
+        margin-top: 314px;
+        left: 46%;
+        min-width: 200px;
+        -webkit-transform: rotate(-4deg);
+                transform: rotate(-4deg);
+      }
+      &.slogan-6 {
+        margin-top: 390px;
+        -webkit-transform: rotate(2deg);
+                transform: rotate(2deg);
+        left: 41%;
+      }
     }
   }
+ 
 }
 
 .navbar {
@@ -181,13 +227,11 @@ header {
   left: 40px;
   width: 320px;
   padding: 25px 32px;
-  -webkit-transform: rotate(-5deg);
-          transform: rotate(-5deg);
   background-color: $white;
   transition: $transition-default;
     .navbar-brand {
       img {
-        max-width: 190px;
+        width: 185px;
       }
     }
     .navbar-toggler-icon {
@@ -257,7 +301,7 @@ header {
   }
 
 main.container {
-  padding-top: 9em;
+  padding-top: 7em;
   padding-bottom: 8em; 
   /* @include media-breakpoint-up(xl) { */
   /*   width: 80%;*/
